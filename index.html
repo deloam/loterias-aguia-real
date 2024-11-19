@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loterias</title>
+    <style>
+      /* Estilização geral */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #6a11cb, #2575fc);
+        color: #fff;
+      }
+
+      /* Container principal */
+      #container {
+        background: #ffffff1a;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        text-align: center;
+        backdrop-filter: blur(10px);
+        color: #fff;
+        width: 100%;
+        max-width: 400px;
+        overflow: hidden;
+      }
+      #texto {
+        padding: 10px;
+      }
+      /* Cabeçalho com imagem e título */
+      #header {
+        position: relative;
+        margin-bottom: 20px;
+      }
+
+      #header img {
+        width: 100%;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+      }
+
+      #header h1 {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #fff;
+        font-size: 24px;
+        font-weight: bold;
+        text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+        background: rgba(0, 0, 0, 0.5);
+        padding: 5px 10px;
+        border-radius: 5px;
+      }
+
+      /* Input e botão */
+      #data {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        background: rgba(255, 255, 255, 0.9);
+        color: #333;
+        outline: none;
+        text-align: center;
+      }
+
+      #enviar {
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #fff;
+        background: #03f072;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+        width: 100%;
+      }
+
+      #enviar:hover {
+        background: #046e14;
+      }
+      #processing {
+        margin-top: 10px;
+        font-size: 14px;
+        color: #ffffff;
+      }
+
+      /* Responsividade */
+      @media (max-width: 600px) {
+        #container {
+          padding: 15px;
+        }
+
+        #data {
+          font-size: 14px;
+        }
+
+        #enviar {
+          font-size: 14px;
+        }
+
+        #header h1 {
+          font-size: 18px;
+        }
+        #processing {
+          margin-top: 10px;
+          font-size: 14px;
+          color: #ffffff;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <!-- Cabeçalho com imagem e título -->
+      <div id="header">
+        <img src="assets/aguia-real-075.png" alt="Imagem de Loteria" />
+        <!--<h1>Aguia Real</h1>-->
+      </div>
+      <!-- Conteúdo do card -->
+      <p id="frase"></p>
+      <p id="texto">Escolha a data</p>
+      <input type="date" id="data" />
+      <button id="enviar">Enviar</button>
+      <p id="processing" style="display: none">Processando...</p>
+      <p id="resultado" style="display: none"></p>
+    </div>
+
+    <script src="renderer.js"></script>
+  </body>
+</html>
